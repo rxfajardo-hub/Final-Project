@@ -1,30 +1,29 @@
-import base64
 import streamlit as st
+import base64
+import os
 
-# --- NEW: BACKGROUND IMAGE FUNCTION ---
 def set_background(image_file):
     with open(image_file, "rb") as f:
-        img_data = f.read()
-    b64_encoded = base64.b64encode(img_data).decode()
-    style = f"""
+        data = f.read()
+    encoded = base64.b64encode(data).decode()
+    st.markdown(
+        f"""
         <style>
         .stApp {{
-            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(data:image/png;base64,{b64_encoded});
+            background-image: url("data:image/jpg;base64,{encoded}");
             background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }}
-        [data-testid="stHeader"] {{
-            background: rgba(0,0,0,0);
         }}
         </style>
-    """
-    st.markdown(style, unsafe_allow_html=True)
+        """,
+        unsafe_allow_html=True
+    )
 
-# Replace "background.png" with your exact image file name
-set_background("background.jpg")
-# --------------------------------------
+base_dir = os.path.dirname(os.path.abspath(__file__))
+image_path = os.path.join(base_dir, "background.jpg")
+set_background(image_path)
+
+st.title("My App")
+
 
 # 1. INITIALIZE PAGE TRACKER (Our Memory Notebook)
 if "page_number" not in st.session_state:
