@@ -21,8 +21,8 @@ scholarships = [
 
 # --- PAGE 1: THE HOME PAGE ---
 if st.session_state.page_number == 1:
-    st.title("🎓 Smart Scholarship Finder")
-    st.subheader("Discover financial aid opportunities for your future.")
+    st.title("🎓 PNW Scholar Tracker")
+    st.subheader("See if you can qualify for scholarships in your field of study!")
     
     st.write("Welcome to the platform! Click the button below to browse all listings or search for specific scholarship types.")
     
