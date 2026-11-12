@@ -8,12 +8,12 @@ if "search_query" not in st.session_state:
 
 # 2. OUR DATABANK (List of scholarships)
 scholarships = [
-    {"name": " HSF Scholarship", "type": "General / All Majors", "url": "scholarships.com/scholarships/hsf-scholarship"},
+    {"name": "HSF Scholarship", "type": "General / All Majors", "url": "https://www.scholarships.com/scholarships/hsf-scholarship"},
     {"name": "WSOS Baccalaureate Scholarship", "type": "General / All Majors", "url": "https://www.scholarships.com/scholarships/wsos-baccalaureate-scholarship"},
     {"name": "CCI Hispanic Scholarship", "type": "STEM & Computer Science", "url": "https://www.scholarships.com/scholarships/cci-hispanic-scholarship"},
-    {"name": " WISE (Women in STEM Excel) Scholarship", "type": "STEM & Engineering", "url": "https://www.scholarships.com/scholarships/wise-women-in-stem-excel-scholarship"},
-    {"name": "WTS Portland Chapter Gail Achterman Leadership Scholarship", "type": "Minority / High School Seniors", "url": "scholarships.com/scholarships/wts-portland-chapter-gail-achterman-leadership-scholarship"},
-    {"name": "OHDC Larry B. Sanchez Memorial Scholarship", "type": "Minority Students", "url": "scholarships.com/scholarships/ohdc-larry-b-sanchez-memorial-scholarship"},
+    {"name": "WISE (Women in STEM Excel) Scholarship", "type": "STEM & Engineering", "url": "https://www.scholarships.com/scholarships/wise-women-in-stem-excel-scholarship"},
+    {"name": "WTS Portland Chapter Gail Achterman Leadership Scholarship", "type": "Minority / High School Seniors", "url": "https://www.scholarships.com/scholarships/wts-portland-chapter-gail-achterman-leadership-scholarship"},
+    {"name": "OHDC Larry B. Sanchez Memorial Scholarship", "type": "Minority Students", "url": "https://www.scholarships.com/scholarships/ohdc-larry-b-sanchez-memorial-scholarship"},
     {"name": "Kristy J. Hendrickson Scholarship", "type": "Arts & Creative Design", "url": "scholarships.com/scholarships/kristy-j-hendrickson-scholarship"},
 ]
 
