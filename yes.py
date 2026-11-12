@@ -1,0 +1,70 @@
+import streamlit as st
+
+# 1. INITIALIZE PAGE TRACKER (Our Memory Notebook)
+if "page_number" not in st.session_state:
+    st.session_state.page_number = 1
+if "search_query" not in st.session_state:
+    st.session_state.search_query = ""
+
+# 2. OUR DATABANK (List of scholarships)
+scholarships = [
+    {"name": "Fastweb", "type": "General / All Majors", "url": "https://fastweb.com"},
+    {"name": "Scholarships.com", "type": "General / All Majors", "url": "https://scholarships.com"},
+    {"name": "CodePath Scholarships", "type": "STEM & Computer Science", "url": "https://codepath.org"},
+    {"name": "NSF Graduate Research", "type": "STEM & Engineering", "url": "https://nsfgrfp.org"},
+    {"name": "The Gates Scholarship", "type": "Minority / High School Seniors", "url": "https://thegatesscholarship.org"},
+    {"name": "Jackie Robinson Foundation", "type": "Minority Students", "url": "https://jackierobinson.org"},
+    {"name": "Adobe Design Circle", "type": "Arts & Creative Design", "url": "https://adobe.com"},
+]
+
+# 3. MAIN WEBSITE LOGIC
+
+# --- PAGE 1: THE HOME PAGE ---
+if st.session_state.page_number == 1:
+    st.title("🎓 Smart Scholarship Finder")
+    st.subheader("Discover financial aid opportunities for your future.")
+    
+    st.write("Welcome to the platform! Click the button below to browse all listings or search for specific scholarship types.")
+    
+    st.write("") # Blank space for layout padding
+
+    # Big main button to go to the search page
+    if st.button("Explore Scholarships 🚀", use_container_width=True):
+        st.session_state.page_number = 2
+        st.rerun()
+
+# --- PAGE 2: THE SEARCH & LIST PAGE ---
+elif st.session_state.page_number == 2:
+    st.title("🔍 Search Scholarships")
+    
+    # Simple link back to the homepage at the top
+    if st.button("⬅️ Back to Home"):
+        st.session_state.search_query = "" # Clear old search text
+        st.session_state.page_number = 1
+        st.rerun()
+        
+    st.write("---")
+
+    # Center Search Bar
+    user_input = st.text_input("Type a keyword (e.g., STEM, Minority, General):", value=st.session_state.search_query)
+
+    # Every time they type, we update the search filter instantly
+    query = user_input.lower().strip()
+
+    # Python Filter Logic
+    if query:
+        filtered_list = [s for s in scholarships if query in s["name"].lower() or query in s["type"].lower()]
+    else:
+        filtered_list = scholarships # If search is empty, show everything
+
+    st.write("") # Layout spacing
+
+    # Display the results
+    if not filtered_list:
+        st.warning("⚠️ No matching scholarship categories found. Try a different word!")
+    else:
+        for item in filtered_list:
+            st.markdown(f"### [{item['name']}]({item['url']})")
+            st.write(f"**Focus Category:** {item['type']}")
+            st.write(f"🔗 [Visit Official Website]({item['url']})")
+            st.write("---")
