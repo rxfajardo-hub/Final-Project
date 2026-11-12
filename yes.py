@@ -8,13 +8,13 @@ if "search_query" not in st.session_state:
 
 # 2. OUR DATABANK (List of scholarships)
 scholarships = [
-    {"name": "Fastweb", "type": "General / All Majors", "url": "https://fastweb.com"},
-    {"name": "Scholarships.com", "type": "General / All Majors", "url": "https://scholarships.com"},
-    {"name": "CodePath Scholarships", "type": "STEM & Computer Science", "url": "https://codepath.org"},
-    {"name": "NSF Graduate Research", "type": "STEM & Engineering", "url": "https://nsfgrfp.org"},
-    {"name": "The Gates Scholarship", "type": "Minority / High School Seniors", "url": "https://thegatesscholarship.org"},
-    {"name": "Jackie Robinson Foundation", "type": "Minority Students", "url": "https://jackierobinson.org"},
-    {"name": "Adobe Design Circle", "type": "Arts & Creative Design", "url": "https://adobe.com"},
+    {"name": " HSF Scholarship", "type": "General / All Majors", "url": "scholarships.com/scholarships/hsf-scholarship"},
+    {"name": "WSOS Baccalaureate Scholarship", "type": "General / All Majors", "url": "https://www.scholarships.com/scholarships/wsos-baccalaureate-scholarship"},
+    {"name": "CCI Hispanic Scholarship", "type": "STEM & Computer Science", "url": "https://www.scholarships.com/scholarships/cci-hispanic-scholarship"},
+    {"name": " WISE (Women in STEM Excel) Scholarship", "type": "STEM & Engineering", "url": "https://www.scholarships.com/scholarships/wise-women-in-stem-excel-scholarship"},
+    {"name": "WTS Portland Chapter Gail Achterman Leadership Scholarship", "type": "Minority / High School Seniors", "url": "scholarships.com/scholarships/wts-portland-chapter-gail-achterman-leadership-scholarship"},
+    {"name": "OHDC Larry B. Sanchez Memorial Scholarship", "type": "Minority Students", "url": "scholarships.com/scholarships/ohdc-larry-b-sanchez-memorial-scholarship"},
+    {"name": "Kristy J. Hendrickson Scholarship", "type": "Arts & Creative Design", "url": "scholarships.com/scholarships/kristy-j-hendrickson-scholarship"},
 ]
 
 # 3. MAIN WEBSITE LOGIC
