@@ -23,7 +23,7 @@ def set_background(image_file):
     st.markdown(style, unsafe_allow_html=True)
 
 # Replace "background.png" with your exact image file name
-set_background("background.jpg
+set_background("background.jpg")
 # --------------------------------------
 
 # 1. INITIALIZE PAGE TRACKER (Our Memory Notebook)
