@@ -1,4 +1,30 @@
+import base64
 import streamlit as st
+
+# --- NEW: BACKGROUND IMAGE FUNCTION ---
+def set_background(image_file):
+    with open(image_file, "rb") as f:
+        img_data = f.read()
+    b64_encoded = base64.b64encode(img_data).decode()
+    style = f"""
+        <style>
+        .stApp {{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(data:image/png;base64,{b64_encoded});
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        [data-testid="stHeader"] {{
+            background: rgba(0,0,0,0);
+        }}
+        </style>
+    """
+    st.markdown(style, unsafe_allow_html=True)
+
+# Replace "background.png" with your exact image file name
+set_background("background.jpg
+# --------------------------------------
 
 # 1. INITIALIZE PAGE TRACKER (Our Memory Notebook)
 if "page_number" not in st.session_state:
@@ -14,7 +40,7 @@ scholarships = [
     {"name": "WISE (Women in STEM Excel) Scholarship", "type": "STEM & Engineering", "url": "https://www.scholarships.com/scholarships/wise-women-in-stem-excel-scholarship"},
     {"name": "WTS Portland Chapter Gail Achterman Leadership Scholarship", "type": "Minority / High School Seniors", "url": "https://www.scholarships.com/scholarships/wts-portland-chapter-gail-achterman-leadership-scholarship"},
     {"name": "OHDC Larry B. Sanchez Memorial Scholarship", "type": "Minority Students", "url": "https://www.scholarships.com/scholarships/ohdc-larry-b-sanchez-memorial-scholarship"},
-    {"name": "Kristy J. Hendrickson Scholarship", "type": "Arts & Creative Design", "url": "scholarships.com/scholarships/kristy-j-hendrickson-scholarship"},
+    {"name": "Kristy J. Hendrickson Scholarship", "type": "Arts & Creative Design", "url": "https://scholarships.com"},
 ]
 
 # 3. MAIN WEBSITE LOGIC
